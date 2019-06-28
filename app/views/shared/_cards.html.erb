@@ -1,4 +1,6 @@
 <div class="cards-container">
-  <%= restaurant.photo1 %>
+  <%= link_to restaurant_path(restaurant) do %>
+  <img src="<%= restaurant.photo1 %>" alt="restaurant photos">
   <%= restaurant.name %>
+  <%end%>
 </div>
