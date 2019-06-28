@@ -29,6 +29,9 @@ class RestaurantsController < ApplicationController
   end
 
   def destroy
+    @restaurant.destroy
+    redirect_to restaurants_path
+    flash[:notice] = "Your restaurant has been removed"
   end
 
   private
