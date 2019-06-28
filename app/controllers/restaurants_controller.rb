@@ -3,6 +3,14 @@ class RestaurantsController < ApplicationController
   before_action :set_restaurants, only: [:show, :edit, :update, :destroy]
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
+    @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
+
+    @markers = @restaurants.map do |restaurant|
+      {
+        lat: restaurant.latitude,
+        lng: restaurant.longitude
+      }
+    end
   end
 
   def show
@@ -45,6 +53,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurants_params
-    params.require(:restaurant).permit(:name, :photo1, :photo2, :photo3, :category)
+    params.require(:restaurant).permit(:name, :photo1, :photo2, :photo3, :category, :address)
   end
 end

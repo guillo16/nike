@@ -1,1 +1,26 @@
+.restaurant-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
 
+#map {
+  width: 100%;
+  height: 100vh;
+  position: sticky;
+  top:0px;
+}
+
+.restaurant-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  padding: 20px;
+}
+
+
+@media (min-width: 100px)and(max-width: 668px) {
+  .restaurant-wrapper {
+    display: block;
+  }
+
+}

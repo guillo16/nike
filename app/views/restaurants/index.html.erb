@@ -3,12 +3,24 @@
     <h2>RESTAURANTS</h2>
   </div>
 </div>
-<div class="restaurant-container">
-  <% @restaurants.each do |restaurant|  %>
-  <%= render 'shared/cards', restaurant: restaurant%>
-  <%end  %>
+<div class="restaurant-wrapper">
+  <div class="restaurant-container">
+    <% @restaurants.each do |restaurant|  %>
+    <%= render 'shared/cards', restaurant: restaurant%>
+    <%end  %>
+  </div>
+  <div
+  id="map"
+
+  data-markers="<%= @markers.to_json %>"
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  ></div>
 </div>
+
+
+
 
 <% if policy(Restaurant).create? %>
 <%= link_to "New restaurant", new_restaurant_path %>
 <% end %>
+
