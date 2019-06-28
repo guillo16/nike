@@ -5,4 +5,6 @@
   <%end  %>
 </div>
 
-<%= link_to 'create restaurant', new_restaurant_path %>
+<% if policy(Restaurant).create? %>
+<%= link_to "New restaurant", new_restaurant_path %>
+<% end %>

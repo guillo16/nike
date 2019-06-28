@@ -2,19 +2,22 @@ class RestaurantsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_restaurants, only: [:show, :edit, :update, :destroy]
   def index
-    @restaurants = Restaurant.all
+    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
   end
 
   def show
+    authorize @restaurant
   end
 
   def new
     @restaurant = Restaurant.new
+    authorize @restaurant
   end
 
   def create
     @restaurant = Restaurant.new(restaurants_params)
     @restaurant.user = current_user
+    authorize @restaurant
     if @restaurant.save == true
       redirect_to restaurant_path(@restaurant)
     else
@@ -32,6 +35,7 @@ class RestaurantsController < ApplicationController
     @restaurant.destroy
     redirect_to restaurants_path
     flash[:notice] = "Your restaurant has been removed"
+    authorize @restaurant
   end
 
   private
