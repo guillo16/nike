@@ -2,9 +2,10 @@
 
 <%= @restaurant.name %>
 <img src="<%= @restaurant.photo1 %> " alt="restaurant photo">
-<% if current_user %>
+<%= link_to 'go back', root_path %>
 
-<%= link_to "delete restaurant", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
-
-<% else %>
+ <% if policy(@restaurant).destroy?  %>
+<button id="sweet-alert-demo" class="btn btn-danger">Delete <%= @restaurant.name %></button>
+<%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
+<%else%>
 <% end %>
