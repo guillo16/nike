@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
     @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
-
+    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
     @markers = @restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
