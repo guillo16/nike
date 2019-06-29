@@ -2,6 +2,10 @@
 
 <%= @restaurant.name %>
 <img src="<%= @restaurant.photo1 %> " alt="restaurant photo">
+<!-- how to put statics maps images with mapbox -->
+<img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(<%= @restaurant.longitude %>,<%= @restaurant.latitude %>)/<%= @restaurant.longitude %>,<%= @restaurant.latitude %>,16,0.00,0.00/200x200@2x?access_token=<%= ENV['MAPBOX_API_KEY'] %>' alt='Restaurant location'  >
+
+
 <%= link_to 'go back', root_path %>
 
  <% if policy(@restaurant).destroy?  %>
@@ -9,3 +13,11 @@
 <%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
 <%else%>
 <% end %>
+
+
+
+
+
+
+
+
