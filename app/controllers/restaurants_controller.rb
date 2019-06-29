@@ -10,7 +10,6 @@ class RestaurantsController < ApplicationController
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: restaurant })
-
       }
     end
   end
