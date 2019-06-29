@@ -15,8 +15,10 @@
 <% end %>
 
 
-
-
+<%if policy(@restaurant).edit?  %>
+<%= link_to 'edit restaurant', edit_restaurant_path %>
+<%else %>
+<%end %>
 
 
 

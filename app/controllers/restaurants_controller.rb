@@ -35,9 +35,14 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    authorize @restaurant
   end
 
   def update
+    authorize @restaurant
+    @restaurant.update(restaurants_params)
+    redirect_to root_path
+
   end
 
   def destroy
