@@ -4,6 +4,8 @@
 
 <%= f.input :name, label: 'Name', required: true, value: @restaurant.name %>
 <%= f.input :photo1, label: 'Photo 1', required: true, value: @restaurant.photo1 %>
+<%= f.input :photo2, label: 'Photo 2', required: true, value: @restaurant.photo2 %>
+<%= f.input :photo3, label: 'Photo 3', required: true, value: @restaurant.photo3 %>
 <%= f.input :address, label: 'Address', required: true, value: @restaurant.address %>
 <%= f.input :category, label: 'Category', required: true, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa"]%>
 
