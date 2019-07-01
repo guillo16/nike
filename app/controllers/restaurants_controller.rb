@@ -4,13 +4,12 @@ class RestaurantsController < ApplicationController
   def index
     @restaurants = policy_scope(Restaurant).order(created_at: :desc)
     @restaurants = Restaurant.where.not(latitude: nil, longitude: nil)
-
+    @restaurants = policy_scope(Restaurant).order(created_at: :desc)
     @markers = @restaurants.map do |restaurant|
       {
         lat: restaurant.latitude,
         lng: restaurant.longitude,
         infoWindow: render_to_string(partial: "infowindow", locals: { restaurant: restaurant })
-
       }
     end
   end
@@ -36,9 +35,14 @@ class RestaurantsController < ApplicationController
   end
 
   def edit
+    authorize @restaurant
   end
 
   def update
+    authorize @restaurant
+    @restaurant.update(restaurants_params)
+    redirect_to root_path
+
   end
 
   def destroy

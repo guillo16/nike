@@ -4,7 +4,20 @@
     <img src="<%= restaurant.photo1 %>" alt="restaurant photos">
   </div>
   <div class="cards-content">
-    <h2><%= restaurant.name %></h2>
+    <div class="cards-name">
+      <h2><%= restaurant.name %></h2>
+    </div>
+    <div class="cards-rating">
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+      <i class="fas fa-star"></i>
+    </div>
+  </div>
+  <div class="cards-middle">
+    <h3><%= restaurant.address %></h3>
+    <h4><%= restaurant.category %></h4>
   </div>
   <%end%>
 </div>

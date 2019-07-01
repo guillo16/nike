@@ -1,11 +1,44 @@
-<h1>this is show</h1>
+<%= render 'shared/carousel', restaurant: @restaurant %>
+<div class="show-wrapper">
+  <div class="show-container">
+    <div class="show-titles">
+      <div class="show-name">
+        <h2><%= @restaurant.name %></h2>
+      </div>
+      <div class="show-rating">
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+        <i class="fas fa-star"></i>
+      </div>
+    </div>
+    <div class="show-description">
+      <h3><%= @restaurant.address %></h3>
+      <h4><%= @restaurant.category %></h4>
+      <p>description in the show</p>
+    </div>
+  </div>
+  <div class="show-img">
+    <!-- how to put statics maps images with mapbox -->
+    <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(<%= @restaurant.longitude %>,<%= @restaurant.latitude %>)/<%= @restaurant.longitude %>,<%= @restaurant.latitude %>,12,0.00,0.00/200x200@2x?access_token=<%= ENV['MAPBOX_API_KEY'] %>' alt='Restaurant location'  >
+  </div>
+</div>
+<div class="show-links">
+  <h4><%= link_to 'Go Back', root_path, class: "go-back"%></h4>`
+  <%if policy(@restaurant).edit?  %>
+  <h2><%= link_to 'Edit Restaurant', edit_restaurant_path, class: "button-edit" %></h2>
+  <%else %>
+  <%end %>
+  <% if policy(@restaurant).destroy?  %>
+  <h3><button id="sweet-alert-demo" class="button-delete">Delete <%= @restaurant.name %></button></h3>
+  <%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
+  <%else%>
+  <% end %>
 
-<%= @restaurant.name %>
-<img src="<%= @restaurant.photo1 %> " alt="restaurant photo">
-<%= link_to 'go back', root_path %>
+</div>
 
- <% if policy(@restaurant).destroy?  %>
-<button id="sweet-alert-demo" class="btn btn-danger">Delete <%= @restaurant.name %></button>
-<%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
-<%else%>
-<% end %>
+
+
+
+

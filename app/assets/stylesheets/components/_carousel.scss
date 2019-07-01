@@ -1,0 +1,15 @@
+.carousel-item.active {
+  img {
+    height: 800px;
+  }
+}
+
+
+@media (min-width: 100px)and(max-width: 675px) {
+  .carousel-item.active {
+    img {
+      height: auto;
+    }
+  }
+}
+
