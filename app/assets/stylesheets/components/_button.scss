@@ -5,6 +5,10 @@
   font-weight: bold;
   padding: 10px 40px;
   border-radius: 6px;
+  &:hover {
+    color: grey;
+    text-decoration: none;
+  }
 }
 
 .button-edit {
@@ -14,9 +18,12 @@
   font-weight: bold;
   padding: 10px 40px;
   border-radius: 6px;
+  &:hover {
+    color: grey;
+    text-decoration: none;
+  }
 
 }
-
 
 .button-delete {
   color: white;
@@ -25,5 +32,9 @@
   font-weight: bold;
   padding: 10px 40px;
   border-color: red;
+  &:hover {
+    color: grey;
+    text-decoration: none;
+  }
 
 }
