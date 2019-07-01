@@ -4,6 +4,6 @@
 <%= f.input :photo2 %>
 <%= f.input :photo3 %>
 <%= f.input :address %>
-<%= f.input :category %>
+<%= f.input :category, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa", "Spanish"]%> %>
 <%= f.submit "create restaurant" %>
 <%end%>
