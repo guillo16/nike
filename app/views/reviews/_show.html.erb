@@ -1,4 +1,14 @@
-<div class="review-container">
-  <p><%= review.user.email %><%= review.created_at.in_time_zone("Buenos Aires").strftime('%d/%m/%y - %H:%M')  %></p>
-  <h2><%= review.content %> </h2>
+<div class="review-wrapper">
+ <div class="review-container">
+    <div class="review-title">
+      <img src="https://images.unsplash.com/photo-1537815749002-de6a533c64db?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1090&q=80" alt="avatar photos">
+      <h3><%= review.user.email %></h3>
+    </div>
+    <div class="review-time">
+      <p><%= review.created_at.in_time_zone("Buenos Aires").strftime('%d/%m/%y - %H:%M')  %></p>
+    </div>
+  </div>
+  <div class="review-content">
+    <h2><%= review.content %></h2>
+  </div>
 </div>

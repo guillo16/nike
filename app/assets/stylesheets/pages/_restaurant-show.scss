@@ -82,6 +82,19 @@
 }
 
 
+#reviews {
+
+  h1 {
+    font-size: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    width: 110px;
+    border-bottom: 5px solid;
+
+  }
+}
+
 @media (min-width: 100px) and (max-width: 785px) {
   .show-wrapper {
     display: block;
