@@ -3,6 +3,8 @@ class ReviewsController < ApplicationController
     @restaurant = Restaurant.find(params[:restaurant_id])
     @review = Review.new(review_params)
     @review.restaurant = @restaurant
+    @review.user = current_user
+    authorize @review
     if @review.save
       redirect_to restaurant_path(@restaurant)
     else
