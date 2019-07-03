@@ -35,9 +35,9 @@
   <%= render 'reviews/show', review: review %>
   <% end %>
   <% end %>
-  <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
-</div>
 
+</div>
+<%= render 'reviews/form', restaurant: @restaurant, review: @review %>
 <div class="show-links">
   <h4><%= link_to 'Go Back', root_path, class: "go-back"%></h4>`
 
