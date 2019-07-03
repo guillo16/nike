@@ -5,7 +5,7 @@
 
 #map {
   width: 100%;
-  height: 100vh;
+  height: 90vh;
   position: sticky;
   top:0px;
 }
@@ -15,6 +15,7 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
   padding: 20px;
+  z-index: 3;
 }
 
 
@@ -28,3 +29,38 @@
   }
 
 }
+
+@media (min-width: 669px)and(max-width: 1000px) {
+
+  .restaurant-wrapper {
+    display: block;
+  }
+  .restaurant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    z-index: 3;
+  }
+}
+
+
+@media (min-width: 1001px)and(max-width: 1025px) {
+
+  .restaurant-wrapper {
+    display: block;
+  }
+  .restaurant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    z-index: 3;
+  }
+}
+
+
+
+
+
+
