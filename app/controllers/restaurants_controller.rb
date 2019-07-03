@@ -16,6 +16,7 @@ class RestaurantsController < ApplicationController
 
   def show
     authorize @restaurant
+    @review = Review.new
   end
 
   def new
@@ -42,7 +43,6 @@ class RestaurantsController < ApplicationController
     authorize @restaurant
     @restaurant.update(restaurants_params)
     redirect_to root_path
-
   end
 
   def destroy

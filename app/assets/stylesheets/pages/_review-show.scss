@@ -1,0 +1,47 @@
+.review-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.review-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.review-title {
+  display: flex;
+  justify-content: space-around;
+
+  h3 {
+     font-size: 13px;
+     font-weight: bold;
+     color: grey;
+  }
+  img {
+    width: 80px;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: white;
+  }
+}
+
+
+.review-time {
+  color: grey;
+  font-size: 12px;
+
+}
+
+
+.review-content {
+
+  color: grey;
+  padding: 10px;
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+  h2 {
+    font-size: 18px;
+
+  }
+}
