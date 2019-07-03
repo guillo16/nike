@@ -43,3 +43,24 @@
     z-index: 3;
   }
 }
+
+
+@media (min-width: 1001px)and(max-width: 1025px) {
+
+  .restaurant-wrapper {
+    display: block;
+  }
+  .restaurant-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    z-index: 3;
+  }
+}
+
+
+
+
+
+
