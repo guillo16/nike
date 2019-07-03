@@ -16,6 +16,7 @@ class RestaurantsController < ApplicationController
 
   def show
     authorize @restaurant
+    @review = Review.new
   end
 
   def new

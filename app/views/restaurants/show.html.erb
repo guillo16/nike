@@ -29,19 +29,18 @@
 </h2>
 <div id="reviews">
   <% if @restaurant.reviews.blank? %>
-    Be the first to leave a review for <%= @restaurant.name %>
+  Be the first to leave a review for <%= @restaurant.name %>
   <% else %>
-    <% @restaurant.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-    <% end %>
+  <% @restaurant.reviews.each do |review| %>
+  <%= render 'reviews/show', review: review %>
   <% end %>
+  <% end %>
+  <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
 </div>
+
 <div class="show-links">
   <h4><%= link_to 'Go Back', root_path, class: "go-back"%></h4>`
-  <%if policy(@restaurant).edit?  %>
-  <h2><%= link_to 'Edit Restaurant', edit_restaurant_path, class: "button-edit" %></h2>
-  <%else %>
-  <%end %>
+
   <% if policy(@restaurant).destroy?  %>
   <h3><button id="sweet-alert-demo" class="button-delete">Delete <%= @restaurant.name %></button></h3>
   <%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
