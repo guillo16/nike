@@ -24,13 +24,13 @@
     <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(<%= @restaurant.longitude %>,<%= @restaurant.latitude %>)/<%= @restaurant.longitude %>,<%= @restaurant.latitude %>,12,0.00,0.00/200x200@2x?access_token=<%= ENV['MAPBOX_API_KEY'] %>' alt='Restaurant location'  >
   </div>
 </div>
-
+<h1 class="count">Reviews(<%=@restaurant.reviews.size%>)</h1>
 <div id="reviews">
-  <h1>Reviews(<%=@restaurant.reviews.size%>)</h1>
+
   <% if @restaurant.reviews.blank? %>
   Be the first to leave a review for <%= @restaurant.name %>
   <% else %>
-  <% @restaurant.reviews.each do |review| %>
+  <% @restaurant.reviews.reverse_each do |review| %>
   <%= render 'reviews/show', review: review %>
   <% end %>
   <% end %>
