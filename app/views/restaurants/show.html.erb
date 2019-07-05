@@ -34,7 +34,13 @@
     <p>You must be log in to create a review</p>
     <%end  %>
   </div>
-  <h2>Reviews(<%=@restaurant.reviews.size%>)</h2>
+  <h2>Reviews(<span id="review-count"><%=@restaurant.reviews.size%>)</span>)</h2>
+        <h5> <% @restaurant.average.times do %>
+          <i class="fas fa-star"></i>
+          <% end %>
+          <% (5 - @restaurant.average).times do %>
+          <i class="far fa-star"></i>
+          <% end %></h5>
 </div>
 <div id="reviews">
   <% if @restaurant.reviews.blank? %>
