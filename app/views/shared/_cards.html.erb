@@ -8,17 +8,18 @@
       <h2><%= restaurant.name %></h2>
     </div>
     <div class="cards-rating">
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-      <i class="fas fa-star"></i>
-    </div>
-  </div>
-  <div class="cards-middle">
-    <h3><%= restaurant.address %></h3>
-    <h4><%= restaurant.category %></h4>
-  </div>
-  <%end%>
+     <% restaurant.average.times do %>
+     <i class="fas fa-star"></i>
+     <% end %>
+     <% (5 - restaurant.average).times do %>
+     <i class="far fa-star"></i>
+     <% end %>
+   </div>
+ </div>
+ <div class="cards-middle">
+  <h3><%= restaurant.address %></h3>
+  <h4><%= restaurant.category %></h4>
+</div>
+<%end%>
 </div>
 

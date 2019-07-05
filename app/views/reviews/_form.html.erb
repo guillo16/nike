@@ -1,6 +1,7 @@
 <div class="container">
   <%= simple_form_for([ restaurant, review ], remote: true) do |form| %>
   <%= form.input :content , label: "Review:"%>
+  <%= form.input :rating, :collection => ["1", "2", "3", "4", "5"] %>
   <%= form.button :submit,  class: 'button-review' %>
   <% end %>
 </div>

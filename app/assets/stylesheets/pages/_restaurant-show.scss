@@ -31,8 +31,10 @@
 
 .show-rating {
   padding: 15px;
+
   i {
    color: #eaa81b;
+
  }
 }
 
@@ -68,10 +70,11 @@
     background-color: red;
     text-align: center;
     border-radius: 6px;
+    margin-bottom: 40px;
   }
 
   h4 {
-    margin-bottom: 0px;
+    margin-bottom: 20px;
     width: 100%;
     background-color: blue;
     text-align: center;
@@ -86,27 +89,34 @@
   width: 90%;
   margin: 0 auto;
   h1 {
+    margin-top: 40px;
     color: grey;
     font-weight: bold;
-    font-size: 28px;
+    font-size: 32px;
     text-align: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    padding: 40px;
-    border-bottom: 1px solid;
   }
   h2 {
     font-size: 20px;
-
     margin-bottom: 20px;
     font-weight: bold;
     width: 110px;
     border-bottom: 5px solid;
-    margin-top: 30px;
 
+
+  }
+
+  h3 {
+    color: #eaa81b;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid;
+    border-color: grey;
   }
   p {
     text-align: right;
+
   }
 }
 
