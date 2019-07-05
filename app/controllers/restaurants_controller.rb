@@ -42,7 +42,7 @@ class RestaurantsController < ApplicationController
   def update
     authorize @restaurant
     @restaurant.update(restaurants_params)
-    redirect_to root_path
+    redirect_to restaurant_path(@restaurant)
   end
 
   def destroy
@@ -59,6 +59,6 @@ class RestaurantsController < ApplicationController
   end
 
   def restaurants_params
-    params.require(:restaurant).permit(:name, :photo1, :photo2, :photo3, :category, :address)
+    params.require(:restaurant).permit(:name, :photo1, :photo2, :photo3, :category, :address, :description)
   end
 end

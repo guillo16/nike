@@ -1,14 +1,21 @@
-<%= simple_form_for @restaurant do |f| %>
-<%= f.error_notification %>
+<div class="form-container">
+  <h2>Edit Restaurant</h2>
+  <%= simple_form_for @restaurant do |f| %>
+  <%= f.error_notification %>
 
+  <%= f.input :name, label: 'Name', required: true, value: @restaurant.name %>
+  <%= f.input :photo1, label: 'Photo 1', required: true, value: @restaurant.photo1 %>
+  <%= f.input :photo2, label: 'Photo 2', required: true, value: @restaurant.photo2 %>
+  <%= f.input :photo3, label: 'Photo 3', required: true, value: @restaurant.photo3 %>
+  <%= f.input :address, label: 'Address', required: true, value: @restaurant.address %>
+  <%= f.input :description, label: 'Description', required: true, value: @restaurant.description %>
+  <%= f.input :category, label: 'Category', required: true, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa","Spanish"]%>
 
-<%= f.input :name, label: 'Name', required: true, value: @restaurant.name %>
-<%= f.input :photo1, label: 'Photo 1', required: true, value: @restaurant.photo1 %>
-<%= f.input :photo2, label: 'Photo 2', required: true, value: @restaurant.photo2 %>
-<%= f.input :photo3, label: 'Photo 3', required: true, value: @restaurant.photo3 %>
-<%= f.input :address, label: 'Address', required: true, value: @restaurant.address %>
-<%= f.input :category, label: 'Category', required: true, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa","Spanish"]%>
+  <%= f.button :submit, "UPDATE", class: 'btn btn-primary' %>
 
-<%= f.button :submit, "UPDATE", class: 'btn btn-primary' %>
+  <% end %>
+  <br>
+  <%= link_to 'Go Back', restaurant_path(@restaurant) %>
+</div>
+<br>
 
-<% end %>

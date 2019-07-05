@@ -1,4 +1,5 @@
-<div class="container">
+<div class="form-container">
+  <h2>Add Restaurant</h2>
   <%= simple_form_for @restaurant do |f| %>
   <%= f.input :name %>
   <%= f.input :photo1 %>
@@ -6,9 +7,13 @@
   <%= f.input :photo3 %>
   <%= f.input :address %>
   <%= f.input :category, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa", "Spanish"] %>
-  <%= f.submit "create restaurant" %>
+  <%= f.input :description %>
+  <%= f.submit "create restaurant", class: "btn btn-primary" %>
   <%end%>
+  <br>
+  <%= link_to 'Go Back', root_path %>
 </div>
+<br>
 
 
 
