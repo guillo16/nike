@@ -6,6 +6,9 @@ function refreshForm(innerHTML) {
 function addReview(reviewHTML) {
   const reviews = document.getElementById('reviews');
   reviews.insertAdjacentHTML('afterbegin', reviewHTML);
+  const reviewCount = document.getElementById('review-count');
+  const newCount = parseInt(reviewCount.innerText) + 1
+  reviewCount.innerText = newCount
 }
 
 <% if @review.errors.any? %>
