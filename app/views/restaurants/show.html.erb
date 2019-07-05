@@ -34,13 +34,7 @@
     <p>You must be log in to create a review</p>
     <%end  %>
   </div>
-  <script>
-    function myReviewFunction() {
-     var x = document.getElementById("reviewForm");
-     x.style.display = "block";
-   }
- </script>
- <h2>Reviews(<%=@restaurant.reviews.size%>)</h2>
+  <h2>Reviews(<%=@restaurant.reviews.size%>)</h2>
 </div>
 <div id="reviews">
   <% if @restaurant.reviews.blank? %>
@@ -52,17 +46,15 @@
   <% end %>
 </div>
 <div class="show-links">
-  <h4><%= link_to 'Go Back', root_path, class: "go-back"%></h4>`
-
-  <% if policy(@restaurant).destroy?  %>
-  <h3><button id="sweet-alert-demo" class="button-delete">Delete <%= @restaurant.name %></button></h3>
-  <%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
-  <%else%>
-  <% end %>
-
+  <%= render 'shared/links', restaurant: @restaurant %>
 </div>
 
 
-
+<script>
+  function myReviewFunction() {
+   var x = document.getElementById("reviewForm");
+   x.style.display = "block";
+ }
+</script>
 
 

@@ -1,0 +1,12 @@
+<div class="container">
+  <h4><%= link_to 'Go Back', root_path, class: "go-back"%></h4>
+  <% if policy(@restaurant).edit?  %>
+  <h2><%= link_to 'Editar' , edit_restaurant_path, class: "button-edit" %></h2>
+  <%else  %>
+  <%end  %>
+  <% if policy(@restaurant).destroy?  %>
+  <h3><button id="sweet-alert-demo" class="button-delete">Delete <%= @restaurant.name %></button></h3>
+  <%= link_to "", restaurant_path(@restaurant), method: :delete, id: "delete-link", class: "hidden" %>
+  <%else%>
+  <% end %>
+</div>
