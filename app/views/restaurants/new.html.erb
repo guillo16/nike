@@ -1,9 +1,14 @@
-<%= simple_form_for @restaurant do |f| %>
-<%= f.input :name %>
-<%= f.input :photo1 %>
-<%= f.input :photo2 %>
-<%= f.input :photo3 %>
-<%= f.input :address %>
-<%= f.input :category, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa", "Spanish"]%> %>
-<%= f.submit "create restaurant" %>
-<%end%>
+<div class="container">
+  <%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo1 %>
+  <%= f.input :photo2 %>
+  <%= f.input :photo3 %>
+  <%= f.input :address %>
+  <%= f.input :category, :collection => ["Italian", "Argentine", "French", "Japanesse", "Usa", "Spanish"] %>
+  <%= f.submit "create restaurant" %>
+  <%end%>
+</div>
+
+
+
