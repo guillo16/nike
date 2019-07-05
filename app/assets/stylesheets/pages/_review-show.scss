@@ -14,15 +14,16 @@
   justify-content: space-around;
 
   h3 {
-     font-size: 13px;
+     font-size: 12px;
      font-weight: bold;
      color: grey;
   }
   img {
-    width: 80px;
+    width: 65px;
     border-radius: 50%;
     border: 3px solid;
     border-color: white;
+    margin-bottom: 0px;
   }
 }
 
@@ -37,11 +38,17 @@
 .review-content {
 
   color: grey;
-  padding: 10px;
+  padding-bottom: 10px;
   border-bottom: 1px solid;
   margin-bottom: 20px;
   h2 {
-    font-size: 18px;
+    font-size: 14px;
 
+  }
+
+  i {
+    margin-top: 0px;
+    font-size: 10px;
+    color: #eaa81b;
   }
 }
