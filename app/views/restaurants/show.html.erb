@@ -24,9 +24,25 @@
     <img src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/pin-l(<%= @restaurant.longitude %>,<%= @restaurant.latitude %>)/<%= @restaurant.longitude %>,<%= @restaurant.latitude %>,12,0.00,0.00/200x200@2x?access_token=<%= ENV['MAPBOX_API_KEY'] %>' alt='Restaurant location'  >
   </div>
 </div>
-<h1 class="count">Reviews(<%=@restaurant.reviews.size%>)</h1>
+<div class="count-review">
+  <h1>Reviews</h1>
+  <p><button id="myReviewButton" onClick="myReviewFunction();" ><i class="fas fa-edit"></i> Write a review</button></p>
+  <% if user_signed_in? %>
+  <div style= "display:none;" id="reviewForm">
+    <%= render 'reviews/form', restaurant: @restaurant, review: @review %>
+    <% else %>
+    <p>You must be log in to create a review</p>
+    <%end  %>
+  </div>
+  <script>
+    function myReviewFunction() {
+     var x = document.getElementById("reviewForm");
+     x.style.display = "block";
+   }
+ </script>
+ <h2>Reviews(<%=@restaurant.reviews.size%>)</h2>
+</div>
 <div id="reviews">
-
   <% if @restaurant.reviews.blank? %>
   Be the first to leave a review for <%= @restaurant.name %>
   <% else %>
@@ -35,7 +51,6 @@
   <% end %>
   <% end %>
 </div>
-<%= render 'reviews/form', restaurant: @restaurant, review: @review %>
 <div class="show-links">
   <h4><%= link_to 'Go Back', root_path, class: "go-back"%></h4>`
 
